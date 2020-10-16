@@ -14,12 +14,12 @@ pipeline {
                 //sh for mac
                 bat "docker-compose up QEdge_xml"
             }
-        }
-        stage('Stop Grid') {
-            steps {
-                //sh for mac
-                bat "docker-compose down"
-            }
-        }
+        }        
     }
+	post{
+		always{
+			archiveArtifacts artifacts: 'volumemapping-output/**'
+			bat "docker-compose down"
+		}
+	}
 }
