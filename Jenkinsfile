@@ -12,7 +12,7 @@ pipeline {
 		stage('Run Test') {
             steps {
                 //sh for mac
-                bat "docker-compose up QEdge_xml --no-color"
+                bat "docker-compose up QEdge_xml"
             }
         }
         stage('Stop Grid') {
