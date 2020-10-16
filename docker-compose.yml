@@ -5,7 +5,9 @@ services:
     restart: always
     image: selenium/hub:3.141.59
     container_name: saudhinggrid
-    privileged: true    
+    privileged: true
+    ports:
+      - "4444:4444"
     environment:
         - GRID_TIMEOUT=240000
         - GRID_BROWSER_TIMEOUT=240000
