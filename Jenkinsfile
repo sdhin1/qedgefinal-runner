@@ -5,7 +5,7 @@ pipeline {
         stage('Run Test') {
             steps {
                 //sh for mac
-				bat "docker system prune"
+				bat "docker system prune -f"
                 bat "docker-compose up"
             }
         }
